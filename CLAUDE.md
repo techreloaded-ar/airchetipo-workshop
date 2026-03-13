@@ -1,4 +1,4 @@
-# CLAUDE.md — Workshop Boilerplate
+# CLAUDE.md — AIRchetipo Workshop
 
 ## Stack
 - **Next.js 15** (App Router, `src/` directory, Turbopack dev)
@@ -91,3 +91,6 @@ const { data } = await supabase.storage.from("bucket").upload("path", file);
 - `NEXT_PUBLIC_SUPABASE_URL` — Supabase project URL
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY` — Supabase publishable key
 - `DATABASE_URL` — Supabase PostgreSQL connection string (for Prisma)
+  - Go to **Supabase Dashboard → Project Settings → Database → Connection string**
+  - Select **Session Pooler** as connection method (not Direct — incompatible with IPv4)
+  - Copy the connection string (port `6543`, `pooler.supabase.com`)

@@ -9,10 +9,7 @@ export default async function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-      <h1 className="text-4xl font-bold">Workshop Boilerplate</h1>
-      <p className="text-muted-foreground text-lg">
-        Next.js + Supabase + Prisma + Tailwind + shadcn/ui
-      </p>
+      <h1 className="text-4xl font-bold">AIRchetipo Workshop</h1>
       {user ? (
         <div className="flex flex-col items-center gap-4">
           <p>Welcome, {user.user_metadata?.full_name ?? user.email}!</p>

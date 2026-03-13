@@ -1,6 +1,4 @@
-# Workshop Boilerplate — Next.js + Supabase + Prisma + Tailwind + shadcn/ui
-
-A ready-to-go starter for building full-stack apps with authentication, database, and a polished UI.
+# AIRchetipo Workshop
 
 ## Stack
 
@@ -29,8 +27,8 @@ A ready-to-go starter for building full-stack apps with authentication, database
 2. Clona la tua fork sulla tua macchina:
 
 ```bash
-git clone https://github.com/TUO-USERNAME/next-auth-neon-boilerplate.git
-cd next-auth-neon-boilerplate
+git clone https://github.com/techreloaded-ar/airchetipo-workshop.git
+cd airchetipo-workshop
 ```
 
 ---
@@ -41,38 +39,28 @@ cd next-auth-neon-boilerplate
 2. Clicca **New Project**
 3. Scegli un nome, una password per il database e la region (scegli la più vicina a te)
 4. Salva la password da qualche parte
-5. Aspetta che il progetto sia pronto 
+5. Aspetta che il progetto sia pronto
 
 ---
 
-### Step 3 — Abilita i provider di autenticazione (Opzionale)
-
-Nel Supabase Dashboard vai su **Authentication → Providers**:
-
-- **GitHub**: Attiva il toggle — funziona subito come managed provider (non serve creare un'OAuth App)
-- **Google**: Attiva il toggle — configura Google Cloud Console > APIs & Services > Credentials
-
-
----
-
-### Step 4 — Configura le variabili d'ambiente
+### Step 3 — Configura le variabili d'ambiente
 
 1. Copia il file di esempio:
 
 ```bash
-cp .env.local.example .env.local
+cp .env.local.example .env
 ```
 
 2. Clicca il pulsante **Connect** nella top bar di Supabase e inserisci i valori in `.env.local`:
 
-- **`NEXT_PUBLIC_SUPABASE_URL`** e **`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`**: vai nel tab **App Frameworks** → seleziona **Next.js** → copia i valori dal tab `.env.local`
-- **`DATABASE_URL`**: vai nel tab **Connection String** → Type **URI**, Method **Direct connection** → copia la connection string
+- **`NEXT_PUBLIC_SUPABASE_URL`** e **`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY`**: vai nel tab **App Frameworks** → seleziona **Next.js** → copia i valori dal tab `.env.local`
+- **`DATABASE_URL`**: vai nel tab **Connection String** → Type **URI**, Method **Session Pooler** (porta 6543) → copia la connection string
 
 > **Attenzione**: nella connection string, sostituisci `[YOUR-PASSWORD]` con la password che hai scelto quando hai creato il progetto.
 
 ---
 
-### Step 5 — Installa le dipendenze
+### Step 4 — Installa le dipendenze
 
 ```bash
 npm install
@@ -80,17 +68,7 @@ npm install
 
 ---
 
-### Step 6 — Crea le tabelle nel database
-
-```bash
-npx prisma db push
-```
-
-Questo comando crea la tabella `User` nel tuo database Supabase basandosi sullo schema in `prisma/schema.prisma`.
-
----
-
-### Step 7 — Avvia il server di sviluppo
+### Step 5 — Avvia il server di sviluppo
 
 ```bash
 npm run dev
@@ -100,11 +78,11 @@ Apri [http://localhost:3000](http://localhost:3000) nel browser.
 
 ---
 
-### Step 8 — Testa il login
+### Step 6 — Testa il login
 
 1. Vai su [http://localhost:3000/auth/signin](http://localhost:3000/auth/signin)
-2. Clicca su **GitHub** o **Google**
-3. Autorizza l'accesso
+2. Clicca su **Registrati** e crea un account con email e password
+3. Effettua il login con le credenziali appena create
 4. Verrai reindirizzato alla dashboard
 
 ---
@@ -137,7 +115,7 @@ curl -X POST http://localhost:3000/api/hello \
 ## Troubleshooting
 
 ### "Invalid API key" o errori di autenticazione
-- Verifica che `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` siano corretti in `.env.local`
+- Verifica che `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY` siano corretti in `.env.local`
 - Assicurati di non avere spazi extra nei valori
 
 ### "Can't reach database server"
