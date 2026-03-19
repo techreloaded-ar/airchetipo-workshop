@@ -45,7 +45,11 @@ cp .env.local.example .env
 
 2. Clicca il pulsante **Connect** nella top bar di Supabase e inserisci i valori in `.env`:
 
-- nel tab **Connection String** → Type **URI**, Method **Session Pooler** → copia la connection string nella variabile **`DATABASE_URL`** in `.env`
+- nel tab **Connection String**:
+  1. Seleziona Type **URI**
+  2. **IMPORTANTE: seleziona Method → Session Pooler** (NON "Direct" — non funziona con IPv4)
+  3. Copia la connection string nella variabile `DATABASE_URL` in `.env`
+
 > **Attenzione**: nella connection string, sostituisci `[YOUR-PASSWORD]` con la password che hai scelto quando hai creato il progetto.
 - nel tab **App Frameworks** → seleziona **Next.js** →  copia i valori **`NEXT_PUBLIC_SUPABASE_URL`** e **`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY`** in `.env`
 
